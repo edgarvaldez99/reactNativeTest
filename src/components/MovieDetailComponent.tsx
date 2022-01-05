@@ -16,7 +16,6 @@ export default function MovieDetailComponent(props: MovieDetailProps) {
       <View style={styles.spacing}>
         <Image source={source} style={styles.image} />
         <Text style={styles.name}>{movie.Title}</Text>
-        <Text style={styles.name}>{movie.Title}</Text>
         <Text style={styles.name}>{movie.imdbRating}</Text>
         <Text style={styles.name}>{movie.Genre}</Text>
         <Text style={styles.name}>{movie.Plot}</Text>

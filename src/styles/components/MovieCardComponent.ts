@@ -3,11 +3,16 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   card: {
     flex: 1,
-    height: 130,
+    display: 'flex',
+    alignContent: 'space-around',
+    height: 220,
+    borderWidth: 0.5,
+    margin: 10,
+    borderRadius: 10,
   },
   spacing: {
     flex: 1,
-    padding: 5,
+    padding: 10,
   },
   bgStyles: {
     flex: 1,
@@ -21,9 +26,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   image: {
-    position: 'absolute',
-    bottom: 2,
-    right: 2,
+    alignSelf: 'center',
+    display: 'flex',
+    justifyContent: 'center',
     width: 90,
     height: 90,
   },

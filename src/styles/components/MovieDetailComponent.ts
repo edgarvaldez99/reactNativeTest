@@ -2,8 +2,12 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   card: {
-    flex: 1,
-    height: 130,
+    top: 100,
+    height: 480,
+    width: 320,
+    borderWidth: 0.5,
+    margin: 10,
+    borderRadius: 10,
   },
   spacing: {
     flex: 1,
@@ -21,9 +25,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   image: {
-    position: 'absolute',
-    bottom: 2,
-    right: 2,
+    alignSelf: 'center',
+    display: 'flex',
+    justifyContent: 'center',
     width: 90,
     height: 90,
   },

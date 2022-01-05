@@ -25,7 +25,9 @@ export default function MovieCardComponent(props: MovieCardProps) {
           <Image source={source} style={styles.image} />
           <Text style={styles.name}>{movie.Title}</Text>
           <Text style={styles.name}>{movie.imdbRating}</Text>
-          <Text style={styles.name}>{movie.Plot}</Text>
+          <Text style={styles.name} numberOfLines={1}>
+            {movie.Plot}
+          </Text>
         </View>
       </View>
     </TouchableWithoutFeedback>

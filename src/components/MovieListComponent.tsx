@@ -12,10 +12,10 @@ export default function MovieListComponent(props: MovieListProps) {
   return (
     <FlatList
       data={movies}
-      numColumns={2}
+      numColumns={1}
       nestedScrollEnabled
       showsVerticalScrollIndicator={false}
-      keyExtractor={item => String(item.imdbID)}
+      keyExtractor={item => item.imdbID}
       renderItem={({item}) => <MovieCardComponent movie={item} />}
       contentContainerStyle={styles.flatListContentContainer}
     />
