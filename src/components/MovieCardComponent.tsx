@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -8,18 +8,18 @@ import DetailNavigateParam from '../types/DetailNavigateParam';
 
 type MovieCardProps = {movie: Movie};
 
-export default function MovieCardComponent(props: MovieCardProps) {
+function MovieCardComponent(props: MovieCardProps) {
   const {navigate} =
     useNavigation<NativeStackNavigationProp<DetailNavigateParam>>();
   const {movie} = props;
   const source = {uri: movie.Poster};
 
-  const goToMovie = () => {
+  const goToMovieDetail = () => {
     navigate('Detail', {imdbID: movie.imdbID});
   };
 
   return (
-    <TouchableWithoutFeedback onPress={goToMovie}>
+    <TouchableWithoutFeedback onPress={goToMovieDetail}>
       <View style={styles.card}>
         <View style={styles.spacing}>
           <Image source={source} style={styles.image} />
@@ -33,3 +33,5 @@ export default function MovieCardComponent(props: MovieCardProps) {
     </TouchableWithoutFeedback>
   );
 }
+
+export default memo(MovieCardComponent);

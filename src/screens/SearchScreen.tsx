@@ -1,29 +1,14 @@
 import React, {useState} from 'react';
-import {SafeAreaView, TextInput} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import MovieListComponent from '../components/MovieListComponent';
-import useMovieListState from '../hooks/useMovieListState';
-import styles from '../styles/screens/SearchScreen';
+import SearchComponent from '../components/SearchComponent';
 
 export default function SearchScreen() {
-  const [search, setSearch] = useState<string>('');
-  const [year, setYear] = useState<string>('');
-  const movies = useMovieListState(search, year);
+  const [movies, setMovies] = useState([]);
 
   return (
     <SafeAreaView>
-      <TextInput
-        style={styles.search}
-        onChangeText={e => setSearch(e)}
-        placeholder="Buscar..."
-        value={search}
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={e => setYear(e)}
-        placeholder="Escribir año..."
-        value={year}
-        keyboardType="numeric"
-      />
+      <SearchComponent onChangeMovies={setMovies} />
       <MovieListComponent movies={movies} />
     </SafeAreaView>
   );
